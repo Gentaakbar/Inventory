@@ -1,6 +1,4 @@
-﻿Demo Aplikasi https://youtu.be/ToOlb_LFUNU <br/>
-
- Fitur
+﻿ Fitur
  - one to one
  - export laporan (pdf, excel)
  - select dan set form input
