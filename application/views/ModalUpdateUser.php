@@ -1,4 +1,4 @@
-<?php $this->load->view('v_header'); ?>
+<?php $this->load->view('v_header'); ?> 
 <?php $this->load->view('Sidebar'); ?>
 <!-- Modal User -->
 <div class="modal fade" id="modalupdateuser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
