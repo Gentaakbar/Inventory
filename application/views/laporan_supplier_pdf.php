@@ -24,10 +24,13 @@
             font-family: Verdana;
         }
     </style>
+
     <h3>
         <center>Data Supplier</center>
     </h3>
+
     <br />
+
     <table class="table-data">
         <thead>
             <tr>
@@ -37,6 +40,7 @@
                 <th>Nomor Telepon</th>
             </tr>
         </thead>
+
         <tbody>
             <?php
             $no = 1;
@@ -52,10 +56,13 @@
             }
             ?>
         </tbody>
+        
     </table>
+
     <script type="text/javascript">
         window.print();
     </script>
+
 </body>
 
 </html>
