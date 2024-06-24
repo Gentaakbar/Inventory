@@ -22,9 +22,9 @@
                 <div class="box-header with-border">
                   <h5 class="box-title"><i class="fa fa-archive" aria-hidden="true"></i> Tambah Data Barang</h5>
                 </div>
-                <!-- /.box-header -->
+                <!-- /.box-header -->  
                 <div class="container">
-                  <form action="<?= site_url('beranda/submitbarangbaru') ?>" role="form" method="post">
+                  <form action="<?= site_url('beranda/submitbarangbaru') ?>" role="form" method="post"> 
                     <div class="box-body">
                       <div class="form-group">
                         <div class="form-group" style="margin-left:13px;display;">
