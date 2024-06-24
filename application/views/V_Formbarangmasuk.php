@@ -4,14 +4,14 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
+      <!-- Content Header (Page header) --> 
       <section class="content-header">
         <h3>
           Input Data Barang Masuk
         </h3>
-        <!-- Main content -->
+        <!-- Main content --> 
         <div class="row">
-          <!-- left column -->
+          <!-- left column --> 
           <div class="col-md-12">
             <div class="container">
               <!-- general form elements -->
