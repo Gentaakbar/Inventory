@@ -213,7 +213,7 @@
           });
         });
         $(function() {
-          $('#example1').DataTable();
+          $('#example1').DataTable(); 
           $('#example2').DataTable({
             'paging': true,
             'lengthChange': false,
@@ -225,10 +225,10 @@
         });
       </script>
       <script>
-        flatpickr("input[type=time]", {});
+        flatpickr("input[type=time]", {}); 
       </script>
       </script>
       </body>
 
-      </html>
+      </html> 
       <?php $this->load->view('v_footer'); ?>
