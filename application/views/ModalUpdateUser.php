@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <!-- tampilan sidebar dan header -->
 <?php $this->load->view('v_header'); ?>
+=======
+<?php $this->load->view('v_header'); ?> 
+>>>>>>> 5e2b67efd4c013b6aff8781396e936ae03b5f01f
 <?php $this->load->view('Sidebar'); ?>
 <!-- Modal User -->
 <div class="modal fade" id="modalupdateuser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
