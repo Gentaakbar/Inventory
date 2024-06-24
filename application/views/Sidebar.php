@@ -1,12 +1,12 @@
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark " id="sidenavAccordion">
-            <div class="sb-sidenav-menu">
+            <div class="sb-sidenav-menu"> 
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">Menu</div>
+                    <div class="sb-sidenav-menu-heading">Menu</div> 
                      <!-- atribut yang menentukan URL tujuan dari hyperlink tersebut. -->
-                    <a class="nav-link" href="<?php echo base_url('Beranda') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <a class="nav-link" href="<?php echo base_url('Beranda') ?>"> 
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> 
                         Dashboard
                     </a>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts">
@@ -21,7 +21,7 @@
                             <a class="nav-link" href="<?php echo base_url('Beranda/inputsupplier') ?>">Tambah Data Supplier</a>
                             <a class="nav-link" href="<?php echo base_url('Beranda/inputbarang') ?>">Tambah Data Barang</a>
                         </nav>
-                    </div>
+                    </div> 
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                         Transaksi
