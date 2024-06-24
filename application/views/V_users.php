@@ -2,8 +2,8 @@
 <?php $this->load->view('Sidebar'); ?>
 
         
-            <div id="layoutSidenav_content">
-                   <!-- Main content -->
+      <div id="layoutSidenav_content">
+      <!-- Main content -->
       <div class="row">
         <div class="col-md-12">
         <div class="container">
@@ -23,10 +23,6 @@
             <?php echo $this->session->flashdata('gagalinputuser'); ?>
             <?php echo $this->session->flashdata('deleteuser'); ?>
 
-
-
-
-              <a data-toggle="modal" class="btn btn-info" data-target="#modaluser" style="margin-bottom:10px;" type="button" class="btn btn-primary" name="tambah_data"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Data</a>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -34,15 +30,17 @@
                   <th>Username</th>
                   <th>Email</th>
                   <th>Role</th>
-                  <th>Last Login</th>
                   <th>Update</th>
                   <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
+                <!-- Jika $list_users adalah array, maka kode di dalam blok if akan dieksekusi. -->
                   <?php if(is_array($list_users)){ ?>
+                    <!-- Setiap elemen dalam $list_users akan disimpan sementara dalam variabel $dd selama satu iterasi loop. -->
                   <?php foreach($list_users as $dd): ?>
+                    <!-- mencetak nilai id dari objek $dd. -->
                     <td><?=$dd->id?></td>
                     <td><?=$dd->username?></td>
                     <td><?=$dd->email?></td>
@@ -51,11 +49,12 @@
                     <?php }else{?>
                     <td>User Biasa</td>
                     <?php }?>
-                    <td><?=$dd->last_login?></td>
                     <td><a type="button"  class="btn btn-info"   href="<?=base_url('beranda/update_user/'.$dd->id)?>" name="btn_update" style="margin:auto;"><i class="fa fa-pen" aria-hidden="true"></i></a></td>
                     <td><a type="button" class="btn btn-danger btn-delete"  href="<?=base_url('beranda/proses_delete_user/'.$dd->id)?>" name="btn_delete" style="margin:auto;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </tr>
+                <!-- berhenti looping -->
               <?php endforeach;?>
+              <!-- jika tidak data akan kosong -->
               <?php }else { ?>
                     <td colspan="7" align="center"><strong>Data Kosong</strong></td>
               <?php } ?>

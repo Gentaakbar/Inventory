@@ -9,7 +9,7 @@
         <!-- Profile Image -->
         <div class="box box-primary" style="width:94%;">
           <div class="box-header">
-
+              <!-- isset pesan error adalah fungsi PHP yang mengembalikan true jika variabel $pesan_error ada dan bukan null -->
             <?php if (isset($pesan_error)) { ?>
               <div class="alert alert-danger alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -34,14 +34,14 @@
           </div>
           <div class="tab-pane active" id="settings">
             <form class="form-horizontal" action="<?= base_url('beranda/proses_new_password') ?>" method="post">
-
+              <!-- menampilkan pesan berhasil -->
               <?php if ($this->session->flashdata('msg_berhasil')) { ?>
                 <div class="alert alert-success alert-dismissible">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                   <strong>Success</strong><br> <?php echo $this->session->flashdata('msg_berhasil'); ?>
                 </div>
               <?php } ?>
-
+                <!-- pesan jika terjadi kesalahan -->
               <?php if (validation_errors()) { ?>
                 <div class="alert alert-warning alert-dismissible">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

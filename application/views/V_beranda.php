@@ -13,6 +13,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Tambah Data</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <!-- menuju ke beranda/input barang -->
                                         <a class="small text-white stretched-link" href="<?php echo base_url('Beranda/inputbarang')?>">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
@@ -22,6 +23,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Data Masuk</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <!-- menuju ke beranda/laporan barangmasuk -->
                                         <a class="small text-white stretched-link" href="<?php echo base_url('Beranda/laporanbarangmasuk')?>">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
@@ -31,16 +33,8 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Data Keluar</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <!-- menuju laporan barangkeluar -->
                                         <a class="small text-white stretched-link" href="<?php echo base_url('Beranda/laporanbarangkeluar')?>">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Profil</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link"  href="<?php echo base_url('Beranda/profile')?>">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

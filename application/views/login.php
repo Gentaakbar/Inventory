@@ -181,9 +181,11 @@ footer a, footer a:link {
 
 <body>
   <div class="wrapper">
+    <!-- form ini akan menuju ke login/proses login - menggunakan metode post-->
   <form action="<?php echo base_url('login/proses_login')?>" class="login" method="post">
 
     <p class="title"><i class="fa fa-sign-in" aria-hidden="true"></i> Log in</p>
+    <!-- mengirimkan pesan alert -->
     <?php if($this->session->flashdata('msg')){ ?>
       <div class="alert alert-warning alert-dismissible">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -207,14 +209,10 @@ footer a, footer a:link {
     <?php }else {
       redirect(base_url());
     }?>
-    <!-- <?php echo anchor(base_url('login/register'),'Register') ?><br> -->
-    <!-- <a href="#">Forgot your password?</a> -->
     <button>
-      <!-- <i class="spinner"></i> -->
       <span class="state"><i class="fa fa-sign-in" aria-hidden="true"></i> Log in</span>
     </button>
   </form>
-  <!-- <footer><a target="blank" href="http://unsadacoder.or.id">UnsadaCoder.or.id</a></footer> -->
   </p>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

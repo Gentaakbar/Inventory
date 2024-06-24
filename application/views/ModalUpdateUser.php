@@ -1,3 +1,4 @@
+<!-- tampilan sidebar dan header -->
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
 <!-- Modal User -->
@@ -8,11 +9,13 @@
         <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
       </div>
       <div class="modal-body table-responsive">
+        <!-- form action yang akan menuju ke beranda/prosesupdateuser  menggunakan post-->
         <form action="<?= site_url('beranda/proses_update_users') ?>" role="form" method="post">
           <div class="box-body">
             <div class="form-group">
 
               <div class="box-body">
+              <!-- Kode ini memulai loop melalui setiap item di $list_data. Setiap item dianggap sebagai objek $d -->
               <?php foreach ($list_data as $d) { ?>
                   <input type="hidden" name="id" value="<?= $d->id ?>">
                   <div class="form-group" style="display:block;">

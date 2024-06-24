@@ -51,9 +51,12 @@
                   </thead>
                   <tbody>
                     <tr>
+                       <!-- Jika $list_data adalah array, maka kode di dalam blok if akan dieksekusi. -->
                       <?php if (is_array($list_data)) { ?>
+                         <!-- Setiap elemen dalam $list_data akan disimpan sementara dalam variabel $dd selama satu iterasi loop. -->
                         <?php foreach ($list_data as $dd) : ?>
                           <td><?= $dd->id; ?></td>
+                           <!-- mencetak nilai kodebarang dari objek $dd. -->
                           <td><?= $dd->kodebarang; ?></td>
                           <td><?= $dd->namabarang; ?></td>
                           <td><?= $dd->satuan; ?></td>
@@ -146,18 +149,22 @@
 
 
             <script>
+               //  Ketika tombol dengan id "buttonupdate" di-klik, fungsi ini akan dieksekusi
               $(document).on("click", "#buttonupdate", function() {
+                // Mengambil Data dari Atribut data-*:
                 var kodebarang1 = $(this).data('kode');
                 var nama1 = $(this).data('nama');
                 var satuan1 = $(this).data('satuan');
                 var jumlah1 = $(this).data('jumlah');
 
+                 // Memasukkan nilai id1 ke dalam elemen dengan ID 'id' yang berada di dalam modal
                 $(".modal-body #kode_barang").val(kodebarang1);
                 $(".modal-body #nama_barang").val(nama1);
                 $(".modal-body #satuan").val(satuan1);
                 $(".modal-body #jumlah").val(jumlah1);
 
               });
+               // menampilkan pesan popup sebelum hapus
               jQuery(document).ready(function($) {
                 $('.btn-delete').on('click', function() {
                   var getLink = $(this).attr('href');
@@ -173,6 +180,7 @@
                   return false;
                 });
               });
+              // agar daata mudah dicari
                 $(function() {
                 $('#example1').DataTable();
                 $('#example2').DataTable({

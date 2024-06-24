@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Beranda extends CI_Controller
 {
 
@@ -148,8 +147,7 @@ class Beranda extends CI_Controller
     $this->load->library('form_validation');
 
     //rules
-    $this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
-    $this->form_validation->set_rules('namasupplier', 'Tanggal', 'required');
+    $this->form_validation->set_rules('namasupplier', 'Nama Supplier', 'required');
     $this->form_validation->set_rules('lokasi', 'Lokasi', 'required');
     $this->form_validation->set_rules('kodebarang', 'Kode Barang', 'required|numeric');
     $this->form_validation->set_rules('namabarang', 'Nama Barang', 'required');
@@ -165,7 +163,6 @@ class Beranda extends CI_Controller
       redirect(base_url('beranda/laporandatabarang'));
     }
     $idtransaksi = $this->input->post('idtransaksi', TRUE);
-    $tanggal      = $this->input->post('tanggal', TRUE);
     $lokasi       = $this->input->post('lokasi', TRUE);
     $namasupplier       = $this->input->post('namasupplier', TRUE);
     $alamat  = $this->input->post('alamat', TRUE);
@@ -177,7 +174,6 @@ class Beranda extends CI_Controller
 
     $data = array(
       'idtransaksi' => $idtransaksi,
-      'tanggal'      => $tanggal,
       'lokasi'       => $lokasi,
       'namasupplier'  => $namasupplier,
       'alamat'  => $alamat,
@@ -205,7 +201,6 @@ class Beranda extends CI_Controller
     $this->load->library('form_validation');
 
     //rules
-    $this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
     $this->form_validation->set_rules('namacustomer', 'Nama Customer', 'required');
     $this->form_validation->set_rules('lokasi', 'Lokasi', 'required');
     $this->form_validation->set_rules('kodebarang', 'Kode Barang', 'required|numeric');
@@ -224,7 +219,6 @@ class Beranda extends CI_Controller
     }
 
     $idtransaksi = $this->input->post('idtransaksi', TRUE);
-    $tanggal      = $this->input->post('tanggal', TRUE);
     $lokasi       = $this->input->post('lokasi', TRUE);
     $namacustomer  = $this->input->post('namacustomer', TRUE);
     $alamat  = $this->input->post('alamat', TRUE);
@@ -237,7 +231,6 @@ class Beranda extends CI_Controller
 
     $data = array(
       'idtransaksi' => $idtransaksi,
-      'tanggal'      => $tanggal,
       'lokasi'       => $lokasi,
       'namacustomer'  => $namacustomer,
       'alamat'  => $alamat,
@@ -538,17 +531,16 @@ class Beranda extends CI_Controller
     if ($this->form_validation->run() == TRUE) {
     }
     $idtransaksi = $this->input->post('idtransaksi', TRUE);
-    $tanggal      = $this->input->post('tanggal', TRUE);
     $lokasi       = $this->input->post('lokasi', TRUE);
     $kode_barang  = $this->input->post('kodebarang', TRUE);
     $nama_barang  = $this->input->post('namabarang', TRUE);
     $satuan       = $this->input->post('satuan', TRUE);
     $jumlah       = $this->input->post('jumlah', TRUE);
 
-    $where = array('id' => $id);
+    $where = array('id' => $idtransaksi);
     $data = array(
-      'kodebarang'  => $kodebarang,
-      'namabarang'  => $namabarang,
+      'kodebarang'  => $kode_barang,
+      'namabarang'  => $nama_barang,
       'satuan'       => $satuan,
       'jumlah'       => $jumlah
 
@@ -641,46 +633,6 @@ class Beranda extends CI_Controller
     $this->session->set_userdata($data);
     $this->load->view('forminsert_users', $data);
   }
-  public function proses_tambah_user()
-  {
-    $this->load->model('M_admin');
-    $this->load->library('form_validation');
-    $this->form_validation->set_rules('username', 'Username', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    $this->form_validation->set_rules('confirm_password', 'Confirm password', 'required|matches[password]');
-
-    $this->form_validation->set_message('required', '%s Tidak Boleh Kosong');
-
-    if ($this->form_validation->run() == TRUE) {
-      if ($this->session->userdata('token_generate') === $this->input->post('token')) {
-        $email        = $this->input->post('email', TRUE);
-        $username     = $this->input->post('username', TRUE);
-        $password     = $this->input->post('password', TRUE);
-        $role         = $this->input->post('role', TRUE);
-
-        $data = array(
-          'email'        => $email,
-          'username'     => $username,
-          'password'     => $this->hash_password($password),
-          'role'         => $role,
-        );
-        $cek =  $this->M_admin->cek_users('users', $username);
-        if ($cek->num_rows() != 1) {
-          $this->M_admin->insert('users', $data);
-          $this->session->set_flashdata('msg_berhasil', '<div class="alert alert-success" role="alert">
-  User Berhasil Ditambahkan
-</div>');
-          redirect(base_url('beranda/Users'));
-        } else {
-          $this->session->set_flashdata('gagaltambah', '<div class="alert alert-danger" role="alert">
-  Username Sudah Ada
-</div>');
-          redirect(base_url('beranda/users'));
-        }
-      }
-    }
-  }
 
   private function hash_password($password)
   {
@@ -725,4 +677,4 @@ class Beranda extends CI_Controller
     }
   }
 }
-
+?>

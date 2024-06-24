@@ -59,7 +59,7 @@ class Laporan_user extends CI_Controller
     }
     public function laporan_databarang_pdf()
     {
-        $this->load->model('M_admin');
+        $this->load->model('M_admin'); 
         $data['databarang'] = $this->M_admin->getdata()->result_array();
         // $this->load->library('dompdf_gen');
         $sroot = $_SERVER['DOCUMENT_ROOT'];

@@ -1,3 +1,4 @@
+<!-- untuk sidebar dan header -->
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
 
@@ -7,6 +8,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
+        <!-- menampilkan pesan  sukses-->
       <?php echo $this->session->flashdata('berhasiltambahcustomer'); ?>
         <h3>
           Input Data Customer Baru
@@ -23,6 +25,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="container">
+                  <!--Form ini mengirimkan data ke URL beranda/submitcustomer barangmenggunakan metode POST. -->
                   <form action="<?= site_url('beranda/submitcustomer') ?>" role="form" method="post">
                     <div class="box-body">
                       <div class="form-group">

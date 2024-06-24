@@ -16,6 +16,7 @@
             <div class="container">
               <!-- general form elements -->
               <div class="box box-primary" style="width:94%;">
+                <!-- menampilkan pesan  stok kurang atau berhasil keluar-->
                 <?php echo $this->session->flashdata('berhasilkeluar'); ?>
                 <?php echo $this->session->flashdata('Stokkurang'); ?>
                 <div class="box-header with-border">
@@ -24,13 +25,21 @@
                 <!-- nomor transaksi otomatis -->
                 <?php
                 $conn = mysqli_connect('localhost', 'root', '', 'dbinventory');
+                // Menginisialisasi variabel $data dengan nilai string kosong.
                 $data = "";
+                // Query SQL ini memilih nilai maksimum dari kolom idtransaksi dari tabel barangkeluar dan mengembalikan hasilnya dengan alias max_code.
+                // Hasil query disimpan dalam variabel $result.
                 $result = mysqli_query($conn, "SELECT max(idtransaksi) as max_code FROM barangkeluar");
+                // Data yang diambil disimpan dalam variabel $data.
                 $data = mysqli_fetch_array($result);
+                // Mengambil nilai dari elemen max_code dalam array $data dan menyimpannya dalam variabel $code.
                 $code = $data['max_code'];
+                // Menggunakan fungsi substr untuk mengambil bagian dari string $code mulai dari indeks ke-3 sepanjang 5 karakter
                 $urutan = (int)substr($code, 3, 5);
                 $urutan++;
+                // Menginisialisasi variabel $huruf dengan nilai string "OUT".
                 $huruf = "OUT";
+                // Menggunakan fungsi sprintf untuk memformat nilai $urutan sebagai string dengan lebar 5 karakter, dengan menambahkan nol di depan jika diperlukan.
                 $kd = $huruf . sprintf("%05s", $urutan);
                 ?>
 
@@ -40,17 +49,10 @@
                     <div class="box-body">
                       <div class="form-group">
                         <?php
-
+                        // Kode ini memulai loop melalui setiap item di $list_data. Setiap item dianggap sebagai objek $d
                         foreach ($list_data as $d) { ?>
                           <label for="idtransaksi" style="margin-left:220px;display:inline;">ID Transaksi</label>
                           <input type="text" name="idtransaksi" style="margin-left:37px;width:20%;display:inline;" class="form-control" readonly="readonly" value="<?= $kd ?>">
-                      </div>
-
-              
-                    <div class="form-group">
-                      <label for="tanggal" style="margin-left:220px;display:inline;">Tanggal</label>
-                      <input type="time" name="tanggal" style="margin-left:66px;width:20%;display:inline;" class="form-control form_datetime" placeholder="Klik Disini">
-                      <small><span class="text-danger"><?php echo form_error('tanggal'); ?></span></small>
                     </div>
                     <div class="form-group" style="margin-bottom:40px;">
                       <label for="nama_barang" style="margin-left:220px;display:inline;">Lokasi</label>
@@ -134,19 +136,28 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <!-- jika listdata1 adalah array maka if akan dieksekusi -->
                     <?php if (is_array($list_data1)) { ?>
+                      <!-- Setiap elemen dalam $list_data1 akan disimpan sementara dalam variabel $dd selama satu iterasi loop. -->
                       <?php foreach ($list_data1 as $dd) : ?>
+                        <!-- mencetak nilai id dari objek $dd. -->
                         <td><?= $dd->id; ?></td>
+                        <!-- mencetak nilai namacustomer dari objek $dd. -->
                         <td><?= $dd->namacustomer; ?></td>
+                        <!-- mencetak nilai alamat dari objek $dd. -->
                         <td><?= $dd->alamat; ?></td>
                         <td><?= $dd->telepon; ?></td>
+                        <!-- atribut data HTML yang menyimpan informasi namacustomer, alamat, dan telepon dari objek $dd.  -->
                         <td><a type="button" class="btn btn-info" data-namacustomer="<?php echo $dd->namacustomer; ?>" data-alamat="<?php echo $dd->alamat; ?>" data-telepon="<?php echo $dd->telepon; ?>" id="buttonpilih" style="margin:auto;height:20%"><i class="" aria-hidden="true"></i>Pilih</a></td>
                   </tr>
+                  <!-- menutup loop -->
                 <?php endforeach; ?>
+                <!-- else bagian ini akan dieksekusi jika $list_data1 bukan array atau tidak ada data di dalamnya. -->
               <?php } else { ?>
                 <td colspan="7" align="center"><strong>Data Kosong</strong></td>
               <?php } ?>
                 </tbody>
+                <!-- Membuka elemen tfoot, yang merupakan bagian dari tabel HTML yang berisi baris kaki tabel (footer). -->
                 <tfoot>
                   <tr>
                     <th>Kode id</th>

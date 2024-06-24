@@ -1,9 +1,10 @@
+<!-- Tampilan header dan sidebar -->
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
         
-            <div id="layoutSidenav_content">
-                <main>
-                <div class="content-wrapper">
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="content-wrapper">
     <!-- Main content -->
       <div class="row">
         <!-- left column -->
@@ -16,12 +17,13 @@
             </div>
             <!-- /.box-header -->
             <div class="container">
+               <!-- Form ini mengirimkan data ke URL beranda/prosesupdatedata barangmenggunakan metode POST. -->
             <form action="<?=site_url('beranda/prosesupdatedatabarang')?>" role="form" method="post">
               <div class="box-body">
               <div class="form-group">
                
               <?php
-               
+                // Kode ini memulai loop melalui setiap item di $list_data. Setiap item dianggap sebagai objek $d
                 foreach($list_data as $d){ ?>
                 <div class="form-group" style="margin-left:13px;display;">
                   <label for="kode_barang" style="width:90%;margin-left: 12px;">Kode Barang / Barcode</label>

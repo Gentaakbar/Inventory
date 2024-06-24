@@ -1,9 +1,9 @@
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
         
-            <div id="layoutSidenav_content">
-                <main>
-                <div class="content-wrapper">
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="content-wrapper">
     <!-- Main content -->
     <div class="row">
         <!-- left column -->
@@ -33,7 +33,6 @@
                 <thead>
                 <tr>
                   <th>ID Transaksi</th>
-                  <th>Tanggal</th>
                   <th>Lokasi</th>
                   <th>Nama Supplier</th>
                   <th>Alamat</th>
@@ -52,7 +51,6 @@
                   <?php if(is_array(@$list_data)){ ?>
                   <?php foreach(@$list_data as $dd): ?>
                     <td><?=$dd->idtransaksi?></td>
-                    <td><?=$dd->tanggal?></td>
                     <td><?=$dd->lokasi?></td>
                     <td><?=$dd->namasupplier?></td>
                     <td><?=$dd->alamat?></td>
@@ -71,7 +69,6 @@
                 <tfoot>
                 <tr>
                   <th>ID Transaksi</th>
-                  <th>Tanggal</th>
                   <th>Lokasi</th>
                   <th>Nama Supplier</th>
                   <th>Alamat</th>
@@ -101,11 +98,6 @@
               <div class="form-group" style="margin-left:13px;display;">
                   <label for="kode_barang" style="width:90%;margin-left: 12px;">ID Transaksi</label>
                   <input type="text" name="kodebarang" readonly="readonly" style="width:50%;margin-right: 50px;" class="form-control" id="idtransaksi">
-                  <small><span class="text-danger"><?php echo form_error('kodebarang');?></span></small>
-                </div>
-                <div class="form-group" style="margin-left:13px;display;">
-                  <label for="kode_barang" style="width:90%;margin-left: 12px;">Tanggal</label>
-                  <input type="text" name="kodebarang" readonly="readonly" style="width:50%;margin-right: 50px;" class="form-control" id="tanggal">
                   <small><span class="text-danger"><?php echo form_error('kodebarang');?></span></small>
                 </div>
                 <div class="form-group" style="margin-left:13px;display;">
@@ -160,7 +152,6 @@
         <script>
           $(document).on("click", "#buttonupdate", function(){
             var idtransaksi1 = $(this).data('idtransaksi');
-            var tanggal1 = $(this).data('tanggal');
             var lokasi1 = $(this).data('lokasi');
             var kodebarang1 = $(this).data('kode');
             var nama1 = $(this).data('nama');
@@ -168,7 +159,6 @@
             var jumlah1 = $(this).data('jumlah');
 
             $(".modal-body #idtransaksi").val(idtransaksi1);
-            $(".modal-body #tanggal").val(tanggal1);
             $(".modal-body #lokasi").val(lokasi1);
             $(".modal-body #kode_barang").val(kodebarang1);
             $(".modal-body #nama_barang").val(nama1);

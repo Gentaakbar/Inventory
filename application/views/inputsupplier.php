@@ -1,3 +1,4 @@
+<!-- untuk header dan sidebar -->
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
 
@@ -7,6 +8,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
+        <!-- pesan flash untuk menunjukan berhasil -->
       <?php echo $this->session->flashdata('berhasiltambahsupplier'); ?>
         <h3>
           Input Data Supplier Baru
@@ -23,6 +25,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="container">
+                  <!-- form ini akan menuju ke beranda/submitsupplier menggunakan metode post -->
                   <form action="<?= site_url('beranda/submitsupplier') ?>" role="form" method="post">
                     <div class="box-body">
                       <div class="form-group">

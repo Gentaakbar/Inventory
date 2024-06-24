@@ -32,7 +32,6 @@
         <thead>
             <tr>
                 <th>ID Transaksi</th>
-                <th>Tanggal</th>
                 <th>Lokasi</th>
                 <th>Nama Supplier</th>
                 <th>Alamat</th>
@@ -50,7 +49,6 @@
             ?>
                 <tr>
                 <td><?=$dd['idtransaksi'];?></td>
-                    <td><?=$dd['tanggal'];?></td>
                     <td><?=$dd['lokasi'];?></td>
                     <td><?=$dd['namasupplier'];?></td>
                     <td><?=$dd['alamat'];?></td>

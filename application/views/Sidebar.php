@@ -4,6 +4,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Menu</div>
+                     <!-- atribut yang menentukan URL tujuan dari hyperlink tersebut. -->
                     <a class="nav-link" href="<?php echo base_url('Beranda') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
@@ -13,6 +14,7 @@
                         Tambah Data
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
+                    <!-- menambahkan sidebar  -->
                     <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="<?php echo base_url('Beranda/inputcustomer') ?>">Tambah Data Customer</a>
@@ -54,10 +56,6 @@
                         </nav>
                     </div>
                     <div class="sb-sidenav-menu-heading">Settings</div>
-                    <a class="nav-link" href="<?php echo base_url('Beranda/profile') ?>">
-                        <div class="sb-nav-link-icon"><i class="fas fa-solid fa-user"></i></div>
-                        Profile
-                    </a>
                     <a class="nav-link" href="<?php echo base_url('Beranda/users') ?>">
                         <div class="sb-nav-link-icon"><i class="fas fa-solid fa-users"></i></div>
                         Users

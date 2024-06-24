@@ -35,12 +35,14 @@
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
+                <!-- menampilkan pesan -->
               <?php echo $this->session->flashdata('pesangagal');?>
               <?php echo $this->session->flashdata('msg');?>
               <h3><strong>Login</strong></h3>
 
               <p class="mb-4"><strong>Silahkan Masukkan Username & Password</strong></p>
             </div>
+            <!-- form ini akan ditujukan ke login/proses_login -->
             <form class="user" action="<?= site_url('Login/proses_login'); ?>" method="post">
               <div class="form-group first">
                 <input type="text" class="form-control" name="username" placeholder="Username">

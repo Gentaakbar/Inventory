@@ -1,3 +1,4 @@
+<!-- untuk menampilkan header dan sidebar -->
 <?php $this->load->view('v_header'); ?>
 <?php $this->load->view('Sidebar'); ?>
 <!-- Modal User -->
@@ -8,6 +9,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Tambah User Baru</h5>
       </div>
       <div class="modal-body table-responsive">
+        <!-- form ini akan menuju ke beranda/proses tambah user menggunakan metode post -->
         <form action="<?= site_url('beranda/proses_tambah_user') ?>" role="form" method="post">
           <div class="box-body">
             <div class="form-group">

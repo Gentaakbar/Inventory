@@ -595,51 +595,7 @@ class user extends CI_Controller
     $this->session->set_userdata($data);
     $this->load->view('user/formupdate_users', $data);
   }
-  public function form_user()
-  {
-    $this->load->model('M_admin');
-    $data['token_generate'] = $this->token_generate();
-    $this->session->set_userdata($data);
-    $this->load->view('user/forminsert_users', $data);
-  }
-  public function proses_tambah_user()
-  {
-    $this->load->model('M_admin');
-    $this->load->library('form_validation');
-    $this->form_validation->set_rules('username', 'Username', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    $this->form_validation->set_rules('confirm_password', 'Confirm password', 'required|matches[password]');
-
-    $this->form_validation->set_message('required', '%s Tidak Boleh Kosong');
-
-    if ($this->form_validation->run() == TRUE) {
-      if ($this->session->userdata('token_generate') === $this->input->post('token')) {
-        $email        = $this->input->post('email', TRUE);
-        $username     = $this->input->post('username', TRUE);
-        $password     = $this->input->post('password', TRUE);
-        $role         = $this->input->post('role', TRUE);
-
-        $data = array(
-          'email'        => $email,
-          'username'     => $username,
-          'password'     => $this->hash_password($password),
-          'role'         => $role,
-        );
-        $this->M_admin->insert('users', $data);
-        $this->session->set_flashdata('msg_berhasil', '<div class="alert alert-success" role="alert">
-      User Berhasil Di tambahkan
-    </div>');
-        redirect(base_url('user/users'));
-      }
-    } else {
-      $this->session->set_flashdata('gagalinputuser', '<div class="alert alert-danger" role="alert">
-      Kolom Tidak Terisi Dengan Benar
-    </div>');
-      $this->load->view('user/ModalUser', $data);
-    }
-  }
-  private function hash_password($password)
+   private function hash_password($password)
   {
     return password_hash($password, PASSWORD_DEFAULT);
   }
